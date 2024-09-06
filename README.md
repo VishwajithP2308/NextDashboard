@@ -1,4 +1,3 @@
-Here is the `README.md` content formatted properly so that you can paste it directly into your file:
 
 ```markdown
 # Dashboard Application with Next.js Frontend and Django Backend
