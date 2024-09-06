@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  backend:
+    build: ./django-backend
+    container_name: django-backend
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./django-backend:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DJANGO_SETTINGS_MODULE=backend.settings 
+
+  frontend:
+    build: ./FrontEnd/nextjs-frontend
+    container_name: nextjs-frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./FrontEnd/nextjs-frontend:/app
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+
+
